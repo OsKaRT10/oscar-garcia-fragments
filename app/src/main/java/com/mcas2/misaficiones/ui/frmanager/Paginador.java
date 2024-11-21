@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.mcas2.misaficiones.fr.aficiones.Comer;
 import com.mcas2.misaficiones.fr.aficiones.Dormir;
+import com.mcas2.misaficiones.fr.aficiones.Jugar;
 
 public class Paginador extends FragmentPagerAdapter {
 
@@ -19,13 +20,14 @@ public class Paginador extends FragmentPagerAdapter {
         mContext = context;
     }
 
-    @Override
-    public Fragment getItem(int position) {
+    public String getAficion(int position) {
         switch (position) {
             case 0:
-                return new Comer();
+                return "Comer";
             case 1:
-                return new Dormir();
+                return "Dormir";
+            case 2:
+                return "Jugar";
             default:
                 return null;
         }
@@ -33,6 +35,27 @@ public class Paginador extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
+
+    @NonNull
+    @Override
+    public Fragment getItem(int position) {
+        switch (position) {
+            case 0:
+                return new Comer();
+            case 1:
+                return new Dormir();
+            case 2:
+                return new Jugar();
+            default:
+                throw new IllegalStateException("Posición no válida: " + position);
+        }
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return getAficion(position);
+    }
+
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mcas2.misaficiones">
 
     <application
         android:allowBackup="true"
@@ -12,21 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.MisAficiones"
         tools:targetApi="31">
+
+        <!-- Actividad principal -->
         <activity
             android:name=".Aficiones"
             android:exported="true"
-            android:label="@string/title_activity_aficiones" >
+            android:label="@string/title_activity_aficiones">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TiposDormir"
-            android:exported="false"
-            android:label="TiposDormir" >
 
-        </activity>
+        <!-- Actividad "Sobre mí" -->
+        <activity
+            android:name=".MiInfoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_miinfo" />
     </application>
 
 </manifest>

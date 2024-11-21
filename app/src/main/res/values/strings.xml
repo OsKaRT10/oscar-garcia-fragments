@@ -7,4 +7,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tipodormir1">Dormir largamente</string>
     <string name="tipodormir2">Dormir profundamente</string>
+    <string name="title_activity_miinfo">Sobre mí</string>
 </resources>
